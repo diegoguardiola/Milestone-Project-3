@@ -19,6 +19,9 @@ export default function Home() {
       </div>
       <button type='submit' className='login'>Login</button>
     </form>
+    <a href='/Signup'>
+        <button className='signup' type='button'>Sign up</button>
+    </a>
     </div>
   )
 }
