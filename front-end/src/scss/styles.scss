@@ -1,5 +1,9 @@
 @import "utilities";
 @import "colors";
+
+.main{
+  background-color: $primarybackground;
+}
   
 .login{
   border: 1px solid black;
