@@ -5,20 +5,23 @@ import './scss/styles.scss'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="Main">
+      <div className='login'>
+        <form>
+          <div>
+            <label for='user'>Username</label>
+          </div>
+          <div>
+            <input type='text' id='user' name='username' placeholder='Username..'></input>
+          </div>
+          <div>
+            <label for='password'>Password</label>
+          </div>
+          <div>
+            <input type='text' id='password' name='password' placeholder='Password..'></input>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }

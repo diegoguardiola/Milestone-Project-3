@@ -1,6 +1,18 @@
-// Test for sass
-.App {
+@import "utilities";
+@import "colors";
+
+.Main {
     text-align: center;
+    background-color: $primarybackground;
     color: red;
+    .login{
+      border: 1px solid black;
+      width: 60%;
+      @include setcenter;
+      label, input{
+        padding: 10px 10px 10px 0;
+        display: inline-block;
+      }
+    }
   }
   
