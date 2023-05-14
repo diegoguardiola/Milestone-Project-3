@@ -1,5 +1,9 @@
 @import "colors";
+@import "utilities";
 
 .main{
     background-color: $primarybackground;
+}
+#formbox{
+    @include setcenter;
 }
