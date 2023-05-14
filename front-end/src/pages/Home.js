@@ -19,7 +19,7 @@ export default function Home() {
       </div>
       <button type='submit' className='login'>Login</button>
     </form>
-    <button className='signup'>Sign up</button>
+    <button className='signup' type='button'>Sign up</button>
     </div>
   )
 }

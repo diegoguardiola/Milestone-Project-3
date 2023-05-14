@@ -24,9 +24,13 @@
     }
   }
   .signup{
+    background-color: $whitebackground;
     @include buttoncorners (2px);
     position: relative;
     right: 20em;
+    &:hover{
+      background-color: royalblue;
+    }
   }
 }
   
