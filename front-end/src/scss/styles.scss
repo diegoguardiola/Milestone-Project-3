@@ -11,5 +11,12 @@
     padding: 10px 10px 10px 0;
     display: inline-block;
   }
+  .login{
+    position: relative;
+    width: 10em;
+    :hover{
+      color: magenta;
+    }
+  }
 }
   

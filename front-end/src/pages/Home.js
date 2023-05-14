@@ -17,6 +17,7 @@ export default function Home() {
       <div>
         <input type='text' id='password' name='password' placeholder='Password..'></input>
       </div>
+      <button type='submit' className='login'>Login</button>
     </form>
     </div>
   )
