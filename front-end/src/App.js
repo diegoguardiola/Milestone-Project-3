@@ -1,27 +1,16 @@
-import logo from './logo.svg';
-// import './App.css';
 
-import './scss/styles.scss'
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import Home from './pages/Home';
 
 function App() {
   return (
-    <div className="Main">
-      <div className='login'>
-        <form>
-          <div>
-            <label for='user'>Username</label>
-          </div>
-          <div>
-            <input type='text' id='user' name='username' placeholder='Username..'></input>
-          </div>
-          <div>
-            <label for='password'>Password</label>
-          </div>
-          <div>
-            <input type='text' id='password' name='password' placeholder='Password..'></input>
-          </div>
-        </form>
-      </div>
+    <div>
+      <Router>
+        <Routes>
+          <Route path='/' element={<Home />}></Route>
+
+        </Routes>
+      </Router>
     </div>
   );
 }
