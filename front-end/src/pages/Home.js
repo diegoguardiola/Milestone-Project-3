@@ -19,7 +19,9 @@ export default function Home() {
       </div>
       <button type='submit' className='login'>Login</button>
     </form>
-    <button className='signup' type='button'>Sign up</button>
+    <a href='/Signup'>
+        <button className='signup' type='button'>Sign up</button>
+    </a>
     </div>
   )
 }
