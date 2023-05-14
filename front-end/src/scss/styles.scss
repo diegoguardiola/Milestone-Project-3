@@ -12,10 +12,12 @@
     display: inline-block;
   }
   .login{
+    @include buttoncorners(3px);
+    background-color: $whitebackground;
     position: relative;
     width: 10em;
-    :hover{
-      color: magenta;
+    &:hover{
+      background-color: royalblue;
     }
   }
 }
