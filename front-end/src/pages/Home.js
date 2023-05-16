@@ -3,6 +3,7 @@ import '../scss/styles.scss'
 
 export default function Home() {
   return (
+    <div className='main'>
     <div className='login'>
     <form>
       <div>
@@ -22,6 +23,7 @@ export default function Home() {
     <a href='/Signup'>
         <button className='signup' type='button'>Sign up</button>
     </a>
+    </div>
     </div>
   )
 }
