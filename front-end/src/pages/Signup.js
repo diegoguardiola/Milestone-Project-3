@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import '../scss/styles.scss'
+import './styles/form.css'
 
 export default function SignUpForm() {
   const [firstName, setFirstName] = useState('')
@@ -13,6 +13,8 @@ export default function SignUpForm() {
   }
 
   return(
+    <>
+    <h1>To register for an account, please fill out the information down below</h1>
     <form onSubmit = {handleSubmit}>
       <label>
         First Name:
@@ -34,8 +36,8 @@ export default function SignUpForm() {
         <input type = "password" value = {password} onChange={(e) => setPassword(e.target.value)}/>
       </label>
       <br/>
-  <button type = "submit">Submit</button>
+  <button className='submitButton' type = "submit">Submit</button>
     </form>
+    </>
   )
 }
-
