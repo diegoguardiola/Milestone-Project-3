@@ -1,5 +1,5 @@
-import React, {useState} from 'react'
-import './styles/form.css'
+import React from 'react'
+import '../scss/styles.scss'
 
 export default function SignUpForm() {
   const [user, setUser] = useState('')

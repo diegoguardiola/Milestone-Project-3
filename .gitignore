@@ -4,6 +4,10 @@
 /front-end/node_modules
 /.pnp
 .pnp.js
+.env
+/node_modules
+/package-lock.json
+
 
 # testing
 /coverage

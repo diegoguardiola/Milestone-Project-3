@@ -10,6 +10,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
+  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
 .login label, .login input {
@@ -46,4 +47,6 @@
 }
 .login .signup:hover {
   background-color: royalblue;
-}/*# sourceMappingURL=styles.css.map */
+}
+
+/*# sourceMappingURL=styles.css.map */
