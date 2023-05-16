@@ -1,23 +1,25 @@
-const {Login} = require('../models/login');
+const Login = require('../models/login');
+
 const express = require('express');
 const router = express.Router();
 
 router.post('/', async (req, res) => {
-    const {websiteURL, login, password } = req.body;
-  
-    try {
-      const newLogin = new Login({
-        websiteURL,
-        login,
-        password,
-      });
-  
-      const savedLogin = await newLogin.save();
-      res.json(savedLogin);
-    } catch (err) {
-      console.error(err.message);
-      res.status(500).send('Server Error');
-    }
-  });
+  const loginInfo = new Login({
+      websiteURL: req.body.websiteURL,
+      login: req.body.login,
+      password: req.body.password,
+    });
+
+  try {
+    const savedLoginInfo = await loginInfo.save();
+    
+    if (!savedLoginInfo)
+      return res.status(400).send('The loginInfo page could not be created.');
+      res.send(savedLoginInfo);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('An error occurred while saving the loginInfo.');
+  }
+});
 
 module.exports = router;

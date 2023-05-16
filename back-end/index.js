@@ -16,7 +16,6 @@ app.use(express.json())
 app.use(morgan('tiny'))             //displays local request
 
 //routers
-console.log(api);
 app.use(`${api}/profile`, require('./controllers/profile'))
 app.use(`${api}/logins`, require('./controllers/login'))
 
