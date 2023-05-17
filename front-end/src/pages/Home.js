@@ -31,7 +31,7 @@ export default function SignUpForm() {
       <br/>
   <button type='submit' className='submitButton'>Login</button>
    <a href='/Signup'>
-   <button  type='button'>Register</button>
+   <button type='button' className='registerButton'>Register</button>
    </a>
     </form>
     </div>

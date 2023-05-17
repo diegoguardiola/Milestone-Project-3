@@ -40,12 +40,21 @@ input {
   display: inline-block;
   font-size: medium;
   margin: 10px;
-  border-radius: 25px;
+  border-radius: 2px;
   background-color: royalblue;
   color: rgba(255, 255, 255, 0.8705882353);
   font-family: sans-serif;
   font-size: 14px;
   margin: 20px 0px;
+}
+
+.registerButton {
+  border: none;
+  text-align: center;
+  display: inline-block;
+  font-size: medium;
+  margin: 10px;
+  border-radius: 2px;
 }
 
 /*# sourceMappingURL=form.css.map */
