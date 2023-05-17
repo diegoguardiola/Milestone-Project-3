@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import React from 'react'
-import { useState } from 'react'
 import '../css/styles.css'
 
 export default function SignUpForm() {
