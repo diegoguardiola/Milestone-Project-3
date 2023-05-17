@@ -38,10 +38,14 @@ label {
 
 
 .submitButton {
-    @include buttoncorners(25px);
+    @include buttoncorners(2px);
     background-color: $backgroundblue;
     color: $whitebackground;
-    font-family: sans-serif;
+    font-family: $primaryfont;
     font-size: 14px;
     margin: 20px 0px;
   }
+.registerButton{
+    @include buttoncorners(2px);
+
+}
