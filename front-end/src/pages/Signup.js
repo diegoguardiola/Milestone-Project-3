@@ -9,6 +9,14 @@ export default function SignUpForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault()
+
+        // const response = await fetch(`http://localhost:5000/authentication/`, {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     },
+        //     body: JSON.stringify(credentials)
+        // })
     console.log('Submitted:', firstName, lastName, email, password)
   }
 
