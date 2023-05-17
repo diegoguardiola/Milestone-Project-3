@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
-import '../css/styles.css'
+import '../css/form.css'
 import axios from 'axios'
+import NavigationBar from '../components/NavigationBar'
 
 export default function SignUpForm() {
   const [signUpData, setSignUpData] = useState({
