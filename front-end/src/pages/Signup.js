@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
-import '../css/styles.css'
+import '../css/form.css'
+import NavigationBar from '../components/NavigationBar'
 
 export default function SignUpForm() {
   const [firstName, setFirstName] = useState('')
@@ -22,6 +23,7 @@ export default function SignUpForm() {
 
   return(
     <>
+    <NavigationBar />
     <h1>To register for an account, please fill out the information down below</h1>
     <form onSubmit = {handleSubmit}>
       <label>
