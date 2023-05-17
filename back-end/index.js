@@ -30,5 +30,5 @@ mongoose.set('strictQuery', false);
 
 app.listen(5000, () => {
     console.log(api);
-    console.log('sever running');
+    console.log('server running');
 })

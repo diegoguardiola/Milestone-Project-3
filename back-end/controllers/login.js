@@ -14,7 +14,7 @@ router.post('/', async (req, res) => {
     const savedLoginInfo = await loginInfo.save();
     
     if (!savedLoginInfo)
-      return res.status(400).send('The loginInfo page could not be created.');
+      return res.status(400).send('The login Info page could not be created.');
       res.send(savedLoginInfo);
   } catch (error) {
     console.error(error);

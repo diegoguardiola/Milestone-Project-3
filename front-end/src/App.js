@@ -1,5 +1,5 @@
-
 import React from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css'
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Home from './pages/Home';
 import Signup from './pages/Signup';
@@ -13,7 +13,6 @@ function App() {
           <Route path='/' element={<Home />}></Route>
           <Route path='/Signup' element={<Signup />}></Route>
           <Route path='/Tracker' element={<Tracker/>}></Route>
-
         </Routes>
       </Router>
     </div>

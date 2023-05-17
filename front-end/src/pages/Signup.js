@@ -35,6 +35,7 @@ export default function SignUpForm() {
   
   return(
     <>
+    <NavigationBar />
     <h1>To register for an account, please fill out the information down below</h1>
     <form onSubmit = {handleSubmit}>
       <label>
