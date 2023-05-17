@@ -68,3 +68,27 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+Technical Information
+This is the place to list all installation and setup instructions. It is quite common to have separate directions for separate parts of a project (front end, back end, etc)
+Include information regarding the coding standards used in the project to ensure regularity between contributions.
+Include directions concerning how to contribute to the project.
+
+https://github.com/CodyNicholson/SD13-Advanced_Topics_Activities/tree/main/D6/1_Intro_AWS_monorepo_DONE/frontend/src
+
+
+https://github.com/CodyNicholson/SD06-Backend-API-Activities/tree/main/D10/02-Breads_Project_DONE/models
+Use this as an example for how the React Context can work so we can have the unique user ID to be a wrap around of our frontend
+
+https://github.com/CodyNicholson/SD13-Advanced_Topics_Activities/tree/main/D6/1_Intro_AWS_monorepo_DONE/frontend/src
+Another reference of how we can add the ContextProvider as a wrap around
+
+https://legacy.reactjs.org/docs/context.html
+Use this as a reference for as a wrap around for React Context after logging in with the unique user id
+
+
+https://digitalskills.instructure.com/courses/8951/pages/activity-at-5-application-documentation?module_item_id=1238722
+
+
+https://github.com/CodyNicholson/ISS_Tracking_Project/tree/master/etl_app
+Learn to use an extra readme.md to save documentation in the Git project allowing collaborators to be caught up easier
