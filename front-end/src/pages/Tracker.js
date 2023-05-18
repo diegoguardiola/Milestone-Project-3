@@ -3,12 +3,17 @@ import '../css/styles.css'
 
 
 export default function Tracker() {
+  const { setCurrentUser } = useContext(CurrentUser)
+  const [credentials, setCredentials] = useState({
+    email: '',
+    password: ''
+})
   return (
-      return (
         <CurrentUserProvider>
     <div className='main'>
         Hello
         <div id='formbox'>
+
 
         </div>
 
@@ -16,4 +21,3 @@ export default function Tracker() {
       );
     }
     
-    export default App;
