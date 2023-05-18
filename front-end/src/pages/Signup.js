@@ -10,6 +10,7 @@ export default function SignUpForm() {
     masterPassword: '',
   })
 
+  
   const handleSubmit = async (event) => {
     event.preventDefault()
     console.log('Submitted:', signUpData)
