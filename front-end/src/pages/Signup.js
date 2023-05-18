@@ -1,26 +1,38 @@
 import React, {useState} from 'react'
-import '../css/form.css'
-import NavigationBar from '../components/NavigationBar'
+import '../css/styles.css'
+import axios from 'axios'
 
 export default function SignUpForm() {
-  const [firstName, setFirstName] = useState('')
-  const [lastName, setLastName] = useState('')
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const [signUpData, setSignUpData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    masterPassword: '',
+  })
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault()
+    console.log('Submitted:', signUpData)
 
-        // const response = await fetch(`http://localhost:5000/authentication/`, {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     },
-        //     body: JSON.stringify(credentials)
-        // })
-    console.log('Submitted:', firstName, lastName, email, password)
+    const newFormDocument = {
+      firstName: signUpData.firstName,
+      lastName: signUpData.lastName, 
+      email: signUpData.email, 
+      masterPassword: signUpData.masterPassword,
+    }
+
+    try {
+      await axios.post('http://localhost:5000/m3/profile/', newFormDocument)
+      alert('Success')
+    } catch (err){
+      console.log(err)
+      // console.error()
+    }
+
+    //navigate('/')
   }
 
+  
   return(
     <>
     <NavigationBar />
@@ -28,22 +40,22 @@ export default function SignUpForm() {
     <form onSubmit = {handleSubmit}>
       <label>
         First Name:
-        <input type = "text" value = {firstName} onChange={(e) => setFirstName(e.target.value)}/>
+        <input type = "text" value = {signUpData.firstName} onChange={(e) => setSignUpData({ ...signUpData, firstName: e.target.value })}/>
       </label>
       <br/>
       <label>
         Last Name:
-        <input type = "text" value = {lastName} onChange={(e) => setLastName(e.target.value)}/>
+        <input type = "text" value = {signUpData.lastName} onChange={(e) => setSignUpData({ ...signUpData, lastName: e.target.value })}/>
       </label>
       <br/>
       <label>
         Email:
-        <input type = "email" value = {email} onChange={(e) => setEmail(e.target.value)}/>
+        <input type = "email" value = {signUpData.email} onChange={(e) => setSignUpData({ ...signUpData, email: e.target.value })}/>
       </label>
       <br/>
       <label>
         Password:
-        <input type = "password" value = {password} onChange={(e) => setPassword(e.target.value)}/>
+        <input type = "password" value = {signUpData.masterPassword} onChange={(e) => setSignUpData({ ...signUpData, masterPassword: e.target.value })}/>
       </label>
       <br/>
   <button className='submitButton' type = "submit">Submit</button>

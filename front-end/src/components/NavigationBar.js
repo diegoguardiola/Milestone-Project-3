@@ -15,7 +15,9 @@ export default function NavigationBar() {
           <LinkContainer to='/'>
             <Nav.Link>Home</Nav.Link>
           </LinkContainer>
-
+          <LinkContainer to='/Signup'>
+            <Nav.Link>Sign Up</Nav.Link>
+          </LinkContainer>
       </Container>
     </Navbar>
 
