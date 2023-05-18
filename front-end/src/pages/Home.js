@@ -1,6 +1,5 @@
 import React ,{useState}from 'react'
 import '../css/styles.css'
-import NavigationBar from '../components/NavigationBar'
 
 export default function SignUpForm() {
   const [user, setUser] = useState('')
@@ -14,7 +13,6 @@ export default function SignUpForm() {
 
   return(
     <div>
-    <NavigationBar />
     <h1>Welcome to the Password Journal Application!</h1>
     <h2>Please enter your credentials down below:</h2>
     <form onSubmit = {handleSubmit}>

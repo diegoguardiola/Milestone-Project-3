@@ -5,10 +5,13 @@ import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Tracker from './pages/Tracker';
 
+import NavigationBar from './components/NavigationBar';
+
 function App() {
   return (
     <div>
       <Router>
+        <NavigationBar />
         <Routes>
           <Route path='/' element={<Home />}></Route>
           <Route path='/Signup' element={<Signup />}></Route>

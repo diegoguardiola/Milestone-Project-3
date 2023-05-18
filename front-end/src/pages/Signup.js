@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 import '../css/form.css'
 import axios from 'axios'
-import NavigationBar from '../components/NavigationBar'
 
 export default function SignUpForm() {
   const [signUpData, setSignUpData] = useState({
@@ -36,7 +35,6 @@ export default function SignUpForm() {
   
   return(
     <>
-    <NavigationBar />
     <h1>To register for an account, please fill out the information down below</h1>
     <form onSubmit = {handleSubmit}>
       <label>
