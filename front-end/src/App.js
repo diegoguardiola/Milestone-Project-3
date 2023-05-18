@@ -7,6 +7,8 @@ import Tracker from './pages/Tracker';
 
 import NavigationBar from './components/NavigationBar';
 
+// import { CurrentUser } from "../contexts/CurrentUser";
+
 function App() {
   return (
     <div>
