@@ -8,26 +8,9 @@ export default function SignUpForm() {
   const [user, setUser] = useState('')
   const [password, setPasswordForUser] = useState('')
 
-  // This is the same as the above
-  const [credentials, setCredentials] = useState({
-    email: user,
-    password: password
-})
-
   async function handleSubmit(e){
     e.preventDefault()
-    const cursor = 
-    console.log()
-    console.log('Submitted:', user, password)
-    const response = await fetch(`http://localhost:5000/authentication/`, {
-      method: 'POST',
-      headers: {
-          'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(credentials)
-    })
-    const data = await response.json()
-    console.log (data)
+
   }
 
 
