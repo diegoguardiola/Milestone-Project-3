@@ -18,6 +18,7 @@ app.use(morgan('tiny'))             //displays local request
 //routers
 app.use(`${api}/profile`, require('./controllers/profile'))
 app.use(`${api}/logins`, require('./controllers/login'))
+app.use(`${api}/authentication`, require('./controllers/authentication'))
 
 mongoose.connect(process.env.PROFILE_CONNECTION)
 .then(() => {
