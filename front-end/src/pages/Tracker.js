@@ -1,53 +1,58 @@
-import React, { useContext, useState } from 'react'
-import '../css/styles.css'
+import React, {useState} from 'react'
+import '../css/form.css'
+import axios from 'axios'
 
-export default function setChildData() {
-  const { setCurrentUser } = useContext(CurrentUser)
-  const [childData, setChildData] = useState({
-    SiteName: '',
-    email: '',
-    password: '',
-  }) 
 
-  return (
-        <CurrentUserProvider>
-<div className='main'>
-        Hello
-        <div>
-            <h1>Saved Login Journals</h1>
-        <table>
-          
-          
-          </table>  
-        </div>
+export default function SignUpForm() {
+  const [journalData, setJournalData] = useState({
+    webURL: '',
+    username: '',
+    password: ''
+  })
 
-        <div id='formbox' >
-          <div>
-            <h1>Adding new login information</h1>
-          </div>
-        <label>
-        Site Name
-        <input type = "text" required value = {setChildData.SiteName} onChange={(e) => setChildData({ ...setChildData, SiteName: e.target.value })}/>
+  
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+    console.log('Submitted:', journalData)
+
+    const newFormDocument = {
+      webURL: journalData.webURL,
+      username: journalData.username, 
+      password: journalData.password
+    }
+
+    try {
+      await axios.post('http://localhost:5000/m3/logins/', newFormDocument)
+      alert('Success')
+    } catch (err){
+      console.log(err)
+    }
+  }
+
+  
+  return(
+    <>
+    <h1>Please enter the following credentials down below:</h1>
+    <form onSubmit = {handleSubmit}>
+      <label>
+        Website URL:
+        <input type = "text" value = {journalData.webURL} onChange={(e) => setJournalData({ ...journalData, webURL: e.target.value })}/>
       </label>
       <br/>
       <label>
-        Email:
-        <input type = "email" required value = {setChildData.email} onChange={(e) => setChildData({ ...setChildData, email: e.target.value })}/>
-      </label>
+        Username:
+        <input type = "text" value = {journalData.username} onChange={(e) => setJournalData({ ...journalData, username: e.target.value })}/>
+       <label/>
       <br/>
       <label>
         Password:
-        <input type = "password" required value = {setChildData.Password} onChange={(e) => setChildData({ ...setChildData, Password: e.target.value })}/>
+        <input type = "text" value = {journalData.password} onChange={(e) => setJournalData({ ...journalData, password: e.target.value })}/>
       </label>
+      <br/>
+  <button className='submitButton' type = "submit">Submit</button>
+    </form>
+    </>
+  )
+}
 
-        </div>
-</div>
 
-<div className='population'>
-
-
-</div>
-
-        </CurrentUserProvider>
-      );
-      };

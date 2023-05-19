@@ -18,6 +18,9 @@ export default function NavigationBar() {
           <LinkContainer to='/Signup'>
             <Nav.Link>Sign Up</Nav.Link>
           </LinkContainer>
+          <LinkContainer to='/Tracker'>
+            <Nav.Link>Password Journal</Nav.Link>
+          </LinkContainer>
       </Container>
     </Navbar>
 
