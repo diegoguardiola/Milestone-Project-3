@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import '../css/form.css'
 import axios from 'axios'
 
+
 export default function SignUpForm() {
   const [journalData, setJournalData] = useState({
     webURL: '',
@@ -41,7 +42,7 @@ export default function SignUpForm() {
       <label>
         Username:
         <input type = "text" value = {journalData.username} onChange={(e) => setJournalData({ ...journalData, username: e.target.value })}/>
-      </label>
+       <label/>
       <br/>
       <label>
         Password:
@@ -53,4 +54,5 @@ export default function SignUpForm() {
     </>
   )
 }
+
 
