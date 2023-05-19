@@ -6,11 +6,11 @@ export default function Tracker() {
   const { setCurrentUser } = useContext(CurrentUser)
   const [credentials, setCredentials] = useState({
     email: '',
-    password: ''
+    password: '',
 })
   return (
         <CurrentUserProvider>
-    <div className='main'>
+<div className='main'>
         Hello
         <div id='formbox'>
 
