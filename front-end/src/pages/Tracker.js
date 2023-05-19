@@ -16,8 +16,7 @@ export default function Tracker() {
 
 
         </div>
-
+</div>
         </CurrentUserProvider>
       );
-    }
-    
+      };
