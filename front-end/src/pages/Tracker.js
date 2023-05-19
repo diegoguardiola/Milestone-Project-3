@@ -34,20 +34,23 @@ export default function SignUpForm() {
     <>
     <h1>Please enter the following credentials down below:</h1>
     <form onSubmit = {handleSubmit}>
+
       <label>
         Website URL:
         <input type = "text" value = {journalData.webURL} onChange={(e) => setJournalData({ ...journalData, webURL: e.target.value })}/>
       </label>
       <br/>
+
       <label>
         Username:
         <input type = "text" value = {journalData.username} onChange={(e) => setJournalData({ ...journalData, username: e.target.value })}/>
-       <label/>
+       </label>
       <br/>
       <label>
         Password:
         <input type = "text" value = {journalData.password} onChange={(e) => setJournalData({ ...journalData, password: e.target.value })}/>
       </label>
+      
       <br/>
   <button className='submitButton' type = "submit">Submit</button>
     </form>
