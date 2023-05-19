@@ -33,6 +33,7 @@ Page#3 will display a form that will prompt the user to enter a webiste link, as
 ![Master Password View](/src/imgs/MasterPasswordView.jpg)
 
 In order to check that this user has these passwords, emails, and links associated to them. The models will authenticate and authorize if the userid is the right one and will garner the information back to the user(reference BREADCRUD project). Lastly the user will have the options to UPDATE or DELETE the information they posted.
+![CRUDLogins](/src/imgs/RevisedTrackerPage.jpg)
 
 
 ## MVP
