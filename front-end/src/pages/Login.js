@@ -2,13 +2,15 @@ import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 //import { useHistory } from "react-router"
 
+import {AuthContext} from "../contexts/AuthContext"
+
 import axios from 'axios';
 
 
 function LoginForm() {
 
     const history = useNavigate()
-    const { setCurrentUser } = useContext(CurrentUser)
+    const { setCurrentUser } = useContext(AuthContext)
     const [credentials, setCredentials] = useState({
         email: '',
         masterPassword: ''
