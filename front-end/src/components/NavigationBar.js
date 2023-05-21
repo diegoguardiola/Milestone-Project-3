@@ -1,28 +1,39 @@
-import React from 'react'
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { useLogout } from '../hooks/useLogout';
+import { useAuthContext } from '../hooks/useAuthContext';
 
+const Navbar = () => {
+  const { logout } = useLogout();
+  const { user } = useAuthContext();
 
-import { LinkContainer } from 'react-router-bootstrap';
+  const handleClick = () => {
+    logout();
+  };
 
-export default function NavigationBar() {
   return (
+    <header>
+      <div className="container">
+        <nav>
+          {user && (
+            <div>
+              <span>{user.email}</span>
+              <button onClick={handleClick}>Log out</button>
+              <Link to="/">Home</Link>
+              <Link to="/</div>Tracker">Password Journal</Link> 
+            </div>
+          )}
+          {!user && (
+            <div>
+              <Link to="/">Home</Link>
+              <Link to="/login">Login</Link>
+              <Link to="/signup">Signup</Link>
+            </div>
+          )}
+        </nav>
+      </div>
+    </header>
+  );
+};
 
-    <Navbar bg="light" expand="lg">
-      <Container>
-        <Navbar.Toggle aria-controls='basic-navbar-nav'/>
-          <LinkContainer to='/'>
-            <Nav.Link>Home</Nav.Link>
-          </LinkContainer>
-          <LinkContainer to='/Signup'>
-            <Nav.Link>Sign Up</Nav.Link>
-          </LinkContainer>
-          <LinkContainer to='/Tracker'>
-            <Nav.Link>Password Journal</Nav.Link>
-          </LinkContainer>
-      </Container>
-    </Navbar>
-
-  )
-}
+export default Navbar;

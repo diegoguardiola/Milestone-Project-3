@@ -6,8 +6,7 @@ import Signup from './pages/Signup';
 import LoginForm from './pages/Login'
 import Tracker from './pages/Tracker';
 import NavigationBar from './components/NavigationBar';
-
-// import { CurrentUser } from "../contexts/CurrentUser";
+//import { CurrentUser } from "../contexts/CurrentUser";
 
 function App() {
   return (

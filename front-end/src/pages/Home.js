@@ -2,36 +2,13 @@ import React ,{useState}from 'react'
 import '../css/styles.css'
 
 
-export default function SignUpForm() {
-  const [user, setUser] = useState('')
-  const [password, setPasswordForUser] = useState('')
+export default function Home() {
 
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    console.log('Submitted:', user, password)
-    
-  }
 
   return(
     <div>
     <h1>Welcome to the Password Journal Application! </h1>
-    <h2>Please enter your credentials down below:</h2>
-    <form onSubmit = {handleSubmit}>
-      <label>
-        Username:
-        <input type = "text" value = {user} onChange={(e) => setUser(e.target.value)}/>
-      </label>
-      <br/>
-      <label>
-        Password:
-        <input type = "password" value = {password} onChange={(e) => setPasswordForUser(e.target.value)}/>
-      </label>
-      <br/>
-  <button type='submit' className='submitButton'>Login</button>
-   <a href='/Signup'>
-   <button type='button' className='registerButton'>Register</button>
-   </a>
-    </form>
+    {/* Give details on how to use the app */}
     </div>
   )
 }
