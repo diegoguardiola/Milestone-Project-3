@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 require('dotenv/config');
 const api = process.env.API_URL;
-const userRoutes = require('./routes/user')
+const userRouter = require('./routes/user')
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 const cors = require('cors')
@@ -15,7 +15,7 @@ app.use(express.json())
 app.use(morgan('tiny'))             //displays local request
 
 //routers
-app.use('/api/user', userRoutes)
+app.use(`${api}/user`, userRouter)
 
 mongoose.connect(process.env.PROFILE_CONNECTION)
 .then(() => {
