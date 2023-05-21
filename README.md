@@ -23,7 +23,7 @@ The PJA app has three main parts: the first is Page#1 the LOGIN and SIGNUP Page.
 ![Login Page](/src/imgs/LoginPage.jpg)
 
 This page will be the front face of the app and will display a form that will show prompt the user to enter an email and password. If the user does not have an account there is a SIGNUP link at the bottom of the form that will redircet the user to Page2. 
-![Reigstration](/src/imgs/Registration.jpg)
+![Registration](/src/imgs/Registration.jpg)
 
 This page is where the user is prompted to enter their name, email, and master password(this will be utilized throughout the app).Once the user clicks on the CREATE button, all of this information will be pushed to the mongoDB database. This page utilizes the GET and POST routes which shows the form, and pushes the form's entries to mongoDB, and there will be a popup indicating to the user that the submission was successful. Then the user will be redirected to Page#1 where they will be prompted to enter their email and master password. Once the app authenticates the user they will be abled to login then they will come across Page#3. 
 ![Schemas](/src/imgs/Schemas.jpg)
@@ -33,6 +33,7 @@ Page#3 will display a form that will prompt the user to enter a webiste link, as
 ![Master Password View](/src/imgs/MasterPasswordView.jpg)
 
 In order to check that this user has these passwords, emails, and links associated to them. The models will authenticate and authorize if the userid is the right one and will garner the information back to the user(reference BREADCRUD project). Lastly the user will have the options to UPDATE or DELETE the information they posted.
+![CRUDLogins](/src/imgs/RevisedTrackerPage.jpg)
 
 
 ## MVP

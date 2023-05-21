@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import '../css/styles.css'
+import '../css/form.css'
 import axios from 'axios'
 
 export default function SignUpForm() {
@@ -10,6 +10,7 @@ export default function SignUpForm() {
     masterPassword: '',
   })
 
+  
   const handleSubmit = async (event) => {
     event.preventDefault()
     console.log('Submitted:', signUpData)
@@ -35,7 +36,6 @@ export default function SignUpForm() {
   
   return(
     <>
-    <NavigationBar />
     <h1>To register for an account, please fill out the information down below</h1>
     <form onSubmit = {handleSubmit}>
       <label>

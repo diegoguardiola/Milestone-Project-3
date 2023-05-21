@@ -1,21 +1,20 @@
-import React from 'react'
+import React ,{useState}from 'react'
 import '../css/styles.css'
-import NavigationBar from '../components/NavigationBar'
+
 
 export default function SignUpForm() {
   const [user, setUser] = useState('')
   const [password, setPasswordForUser] = useState('')
 
-
   const handleSubmit = (event) => {
     event.preventDefault()
     console.log('Submitted:', user, password)
+    
   }
 
   return(
     <div>
-    <NavigationBar />
-    <h1>Welcome to the Password Journal Application!</h1>
+    <h1>Welcome to the Password Journal Application! </h1>
     <h2>Please enter your credentials down below:</h2>
     <form onSubmit = {handleSubmit}>
       <label>
