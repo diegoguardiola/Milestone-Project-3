@@ -5,8 +5,8 @@ const router = express.Router();
 
 router.post('/', async (req, res) => {
   const loginInfo = new Login({
-      websiteURL: req.body.websiteURL,
-      login: req.body.login,
+      webURL: req.body.webURL,
+      username: req.body.username,
       password: req.body.password,
     });
 
