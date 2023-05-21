@@ -92,3 +92,6 @@ https://digitalskills.instructure.com/courses/8951/pages/activity-at-5-applicati
 
 https://github.com/CodyNicholson/ISS_Tracking_Project/tree/master/etl_app
 Learn to use an extra readme.md to save documentation in the Git project allowing collaborators to be caught up easier
+
+USE nodemon index.js instead of the node index.js because server needs to update everytime. We were able to connect to server on 5/18/23.
+
