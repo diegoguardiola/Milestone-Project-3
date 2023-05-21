@@ -6,8 +6,7 @@ import './css/signup.css';
 import './css/tracker.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
-import { AuthContextProvider } from './contexts/AuthContext';
+import {AuthContextProvider} from './contexts/AuthContext'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
