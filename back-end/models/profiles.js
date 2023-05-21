@@ -21,6 +21,13 @@ const ProfileSchema = new mongoose.Schema({
     required: true,
     unique: true,
   },
+  
 });
+// virtuals 
+ProfileSchema.virtual('secrets', {
+  ref: 'Secrets',
+  localField: '_id',
+  foreignField: 'profile'
+})
 
 module.exports = mongoose.model('Profile', ProfileSchema);
