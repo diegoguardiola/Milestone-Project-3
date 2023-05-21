@@ -24,7 +24,8 @@ userSchema.virtual('secrets', {
 
 // static signup method
 userSchema.statics.signup = async function(email, password) {
-
+console.log(email)
+console.log(password)
   // validation
   if (!email || !password) {
     throw Error('All fields must be filled')
