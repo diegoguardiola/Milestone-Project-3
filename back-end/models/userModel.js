@@ -15,6 +15,12 @@ const userSchema = new Schema({
     required: true
   }
 })
+// virtuals 
+userSchema.virtual('secrets', {
+  ref: 'Secret',
+  localField: '_id',
+  foreignField: 'user'
+})
 
 // static signup method
 userSchema.statics.signup = async function(email, password) {
@@ -64,4 +70,5 @@ userSchema.statics.login = async function(email, password) {
   return user
 }
 
-module.exports = mongoose.model('User', userSchema)
+const User = mongoose.model('User', userSchema)
+module.exports = User
