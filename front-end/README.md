@@ -95,3 +95,6 @@ Learn to use an extra readme.md to save documentation in the Git project allowin
 
 USE nodemon index.js instead of the node index.js because server needs to update everytime. We were able to connect to server on 5/18/23.
 
+In case if /back-end/.env file deletes again
+API_URL=/m3
+PROFILE_CONNECTION=mongodb+srv://diegoguardiola01:Mn5eWO3si9bEEFim@cluster0.f5airvu.mongodb.net/milestone3?retryWrites=true&w=majority
