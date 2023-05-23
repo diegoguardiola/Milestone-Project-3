@@ -5,6 +5,14 @@ const validator = require('validator')
 const Schema = mongoose.Schema
 
 const userSchema = new Schema({
+  firstName:{
+    type: String,
+    required: true,
+  },
+  lastName:{
+    type: String,
+    required: true,
+  },
   email: {
     type: String,
     required: true,
@@ -15,26 +23,20 @@ const userSchema = new Schema({
     required: true
   }
 })
-// virtuals 
-userSchema.virtual('secrets', {
-  ref: 'Secret',
-  localField: '_id',
-  foreignField: 'user'
-})
 
 // static signup method
 userSchema.statics.signup = async function(email, password) {
-console.log(email)
-console.log(password)
-  // validation
+  console.log(typeof(password))
+  console.log(email)
+  //validation
   if (!email || !password) {
-    throw Error('All fields must be filled')
+    throw Error('Email and password are required')
   }
   if (!validator.isEmail(email)) {
-    throw Error('Email not valid')
+    throw Error('Email is invalid')
   }
   if (!validator.isStrongPassword(password)) {
-    throw Error('Password not strong enough')
+    throw Error('Password is not strong enough')
   }
 
   const exists = await this.findOne({ email })
@@ -51,11 +53,11 @@ console.log(password)
   return user
 }
 
-// static login method
+//static login method
 userSchema.statics.login = async function(email, password) {
-
+  //validation
   if (!email || !password) {
-    throw Error('All fields must be filled')
+    throw Error('Al;l fields are required')
   }
 
   const user = await this.findOne({ email })
@@ -64,12 +66,11 @@ userSchema.statics.login = async function(email, password) {
   }
 
   const match = await bcrypt.compare(password, user.password)
-  if (!match) {
+  if(!match) {
     throw Error('Incorrect password')
-  }
+  } 
 
   return user
 }
 
-const User = mongoose.model('User', userSchema)
-module.exports = User
+module.exports = mongoose.model('User', userSchema)
