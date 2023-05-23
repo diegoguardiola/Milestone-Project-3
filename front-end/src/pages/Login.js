@@ -1,21 +1,21 @@
 import React, { useState } from "react"
-import { useSignup } from "../hooks/useSignUp"
+import { useLogin } from "../hooks/useLogin"
 import "../css/styles.css"
 
-const Signup = () => {
+const Login = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const {signup, error, isLoading} = useSignup()
+  const {login, error, isLoading} = useLogin()
 
   const handleSubmit = async (e) => {
     e.preventDefault()
 
-    await signup(email, password)
+    await login(email, password)
   }
 
   return (
-    <form className="signup" onSubmit={handleSubmit}>
-      <h3>Sign Up</h3>
+    <form className="login" onSubmit={handleSubmit}>
+      <h3>Log In</h3>
       
       <label>Email address:</label>
       <input 
@@ -30,10 +30,10 @@ const Signup = () => {
         value={password} 
       />
 
-      <button disabled={isLoading}>Sign up</button>
+      <button disabled={isLoading}>Log in</button>
       {error && <div className="error">{error}</div>}
     </form>
   )
 }
 
-export default Signup
+export default Login

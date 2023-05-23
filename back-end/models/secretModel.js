@@ -1,29 +1,20 @@
-// dependencies
 const mongoose = require('mongoose')
-const user = require('./userModel')
-const { Schema } = mongoose
 
-// schema
+const Schema = mongoose.Schema
+
 const secretSchema = new Schema({
-    siteName: {
-        type: String,
-        required: true,
-        }, 
-    email: {
-        type: String,
-        required: true
-    },
-    password: {
-        type: String,
-        required: true,
-    },
-    user: {
-        type: Schema.Types.ObjectID,
-        ref: 'User'
-      }
-})
+  url: {
+    type: String,
+    required: true
+  },
+  password: {
+    type: String,
+    required: true
+  },
+  user_id: { 
+    type: String,
+    required: true
+  }
+}, { timestamps: true })
 
-
-// model and export
-const SecretModel = mongoose.model('Secret', secretSchema)
-module.exports = SecretModel
+module.exports = mongoose.model('Secret', secretSchema)
