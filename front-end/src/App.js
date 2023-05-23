@@ -1,26 +1,34 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import {BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom'
+import { useAuthContext } from './hooks/useAuthContext';
 import Home from './pages/Home';
 import Signup from './pages/Signup';
 import LoginForm from './pages/Login'
-import Tracker from './pages/Tracker';
 import NavigationBar from './components/NavigationBar';
 
 
-// import { CurrentUser } from "../contexts/CurrentUser";
-
 function App() {
+  const {user} = useAuthContext()
+
   return (
     <div>
       
       <Router>
         <NavigationBar />
         <Routes>
-          <Route path='/' element={<Home />}></Route>
-          <Route path='/Signup' element={<Signup />}></Route>
-          <Route path="/login" element={<LoginForm />}></Route>
-          <Route path='/Tracker' element={<Tracker/>}></Route>
+          <Route 
+            path='/' 
+            element={user ? <Home /> : <Navigate to="/Login" />} 
+          />
+          <Route 
+            path='/Signup'
+            element={!user ? <Signup /> : <Navigate to="/" />}
+          />
+          <Route 
+            path="/Login" 
+            element={!user ? <LoginForm /> : <Navigate to="/" />} 
+          />
         </Routes>
       </Router>
     </div>

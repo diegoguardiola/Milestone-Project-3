@@ -1,58 +1,45 @@
-import React from 'react'
-import { useState } from 'react'
-import '../css/styles.css'
-import { Navigate, useNavigate } from 'react-router-dom'
+import React, { useEffect }from 'react'
+import { useSecretsContext } from "../hooks/useSecretsContext"
+import { useAuthContext } from "../hooks/useAuthContext"
 
+// components
+import SecretDetails from '../components/SecretDetails'
+import SecretForm from '../components/SecretForm'
 
-export default function SignUpForm() {
-  const [user, setUser] = useState('')
-  const [password, setPasswordForUser] = useState('')
+const Home = () => {
+  const {secrets, dispatch} = useSecretsContext()
+  const {user} = useAuthContext()
 
-  
-  const [credentials, setCredentials] = useState({
-    email: '',
-    password: ''
-})
+  useEffect(() => {
+    const fetchSecrets = async () => {
+      const response = await fetch('http://localhost:5000/m3/secrets/', {
+        headers: {'Authorization': `Bearer ${user.token}`},
+      })
+      const json = await response.json()
 
-  async function handleSubmit(e){
-    e.preventDefault()
-    const response = await fetch(`http://localhost:5000/m3/authentication/`, {
-      method: 'POST',
-      headers: {
-          'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(credentials)
-  })
+      if (response.ok) {
+        dispatch({type: 'SET_SECRETS', payload: json})
+      }
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+    }
 
-  const data = await response.json()
+    if (user) {
+      fetchSecrets()
+    }
+  }, [dispatch, user])
 
-  if (response.status === 200) {
-      Navigate(`/`)
-  } else {
-    console.error()
-      // setErrorMessage(data.message)
-  }
-}
-  return(
+  return (
     <div>
-    <h1>Welcome to the Password Journal Application! </h1>
-    <h2>Please enter your credentials down below:</h2>
-    <form onSubmit = {handleSubmit}>
-      <label>
-        Username:
-        <input type = "text" value = {user.email} onChange={(e) => setCredentials({...credentials, email: e.target.value})}/>
-      </label>
-      <br/>
-      <label>
-        Password:
-        <input type = "password" value = {user.password} onChange={(e) => setCredentials({...credentials, password: e.target.value})}/>
-      </label>
-      <br/>
-  <button type='submit' className='submitButton'>Login</button>
-   <a href='/Signup'>
-   <button type='button' className='registerButton'>Register</button>
-   </a>
-    </form>
+      <div>
+        {secrets && secrets.map((secret) => (
+          <SecretDetails key={secret._id} secret={secret} />
+        ))}
+      </div>
+      <SecretForm />
     </div>
   )
 }
+
+export default Home
