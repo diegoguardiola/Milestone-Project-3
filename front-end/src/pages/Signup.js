@@ -7,7 +7,8 @@ export default function SignUpForm() {
     firstName: '',
     lastName: '',
     email: '',
-    masterPassword: '',
+    // masterPassword: '',
+    password: '',
   })
 
   
@@ -19,7 +20,8 @@ export default function SignUpForm() {
       firstName: signUpData.firstName,
       lastName: signUpData.lastName, 
       email: signUpData.email, 
-      masterPassword: signUpData.masterPassword,
+      // masterPassword: signUpData.masterPassword,
+      password: setSignUpData.password,
     }
 
     try {
@@ -55,7 +57,9 @@ export default function SignUpForm() {
       <br/>
       <label>
         Password:
-        <input type = "password" value = {signUpData.masterPassword} onChange={(e) => setSignUpData({ ...signUpData, masterPassword: e.target.value })}/>
+        {/* <input type = "password" value = {signUpData.assword} onChange={(e) => setSignUpData({ ...signUpData, masterPassword: e.target.value })}/> */}
+        <input type = "password" value = {signUpData.password} onChange={(e) => setSignUpData({ ...signUpData, password: e.target.value })}/>
+
       </label>
       <br/>
   <button className='submitButton' type = "submit">Submit</button>
