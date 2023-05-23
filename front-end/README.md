@@ -95,3 +95,22 @@ Learn to use an extra readme.md to save documentation in the Git project allowin
 
 USE nodemon index.js instead of the node index.js because server needs to update everytime. We were able to connect to server on 5/18/23.
 
+In case if /back-end/.env file deletes again since it was added to .gitignore
+API_URL=/m3
+PROFILE_CONNECTION=mongodb+srv://diegoguardiola01:Mn5eWO3si9bEEFim@cluster0.f5airvu.mongodb.net/milestone3?retryWrites=true&w=majority
+
+and also updated it to 
+API_URL=/m3
+PROFILE_CONNECTION=mongodb+srv://diegoguardiola01:Mn5eWO3si9bEEFim@cluster0.f5airvu.mongodb.net/milestone3?retryWrites=true
+SECRET=aosjdflksjdfpo349tu58tu9874
+
+
+After talking with Cody, he told us to to use virtuals in our schema to have the unique ID user to display their list of "secret" (sitename, emails, and passwords) when the their profile is brought up.
+
+
+https://github.com/HackerUSA-CE/API-BreadCRUD-Part-2/blob/part16-6.8.13/models/bread.js
+Using the same method that we used in BreadCRUD to show the breads and the baker that made the bread in the first place
+
+https://github.com/HackerUSA-CE/API-BreadCRUD-Part-2/blob/part16-6.8.13/models/baker.js
+
+https://mongoosejs.com/docs/tutorials/virtuals.html

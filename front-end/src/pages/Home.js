@@ -1,6 +1,7 @@
 import React, { useEffect }from 'react'
 import { useSecretsContext } from "../hooks/useSecretsContext"
 import { useAuthContext } from "../hooks/useAuthContext"
+import "../css/styles.css"
 
 // components
 import SecretDetails from '../components/SecretDetails'
