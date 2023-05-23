@@ -21,7 +21,7 @@ export default function SignUpForm() {
       lastName: signUpData.lastName, 
       email: signUpData.email, 
       // masterPassword: signUpData.masterPassword,
-      password: setSignUpData.password,
+      password: signUpData.password,
     }
 
     try {
