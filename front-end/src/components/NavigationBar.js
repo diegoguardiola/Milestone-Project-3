@@ -23,7 +23,7 @@ const Navibar = () => {
         <Nav className="me-auto">
           {user && (
             <>
-              {user.email}
+              <Navbar.Text>Signed in as <b>{user.email}</b></Navbar.Text>
               <Link className='nav-link' to='/' onClick={handleClick}>Log out</Link>
               <Link className='nav-link' to='/'>Home</Link>
             </>
