@@ -19,5 +19,6 @@
     "morgan": "^1.10.0",
     "react-router": "^6.11.2",
     "validator": "^13.9.0"
+    
   }
 }

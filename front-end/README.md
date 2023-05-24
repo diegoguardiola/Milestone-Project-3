@@ -114,3 +114,7 @@ Using the same method that we used in BreadCRUD to show the breads and the baker
 https://github.com/HackerUSA-CE/API-BreadCRUD-Part-2/blob/part16-6.8.13/models/baker.js
 
 https://mongoosejs.com/docs/tutorials/virtuals.html
+
+https://www.w3schools.com/html/html_form_input_types.asp
+
+use this for form input types like firstname, last, email, password

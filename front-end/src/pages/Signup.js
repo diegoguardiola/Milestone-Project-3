@@ -4,6 +4,8 @@ import "../css/styles.css"
 import "../css/form.css"
 
 const Signup = () => {
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const {signup, error, isLoading} = useSignup()
@@ -17,7 +19,24 @@ const Signup = () => {
   return (
     <>
      <h1>To register for an account, please fill out the information down below</h1>
+     
     <form className="signup" onSubmit={handleSubmit}>      
+
+    <label>First Name:
+      <input 
+        type="text"
+        onChange={(e) => setFirstName(e.target.value)} 
+        value={firstName} 
+      />
+      </label>      
+      <label>Last Name:
+      <input 
+        type="text" 
+        onChange={(e) => setLastName(e.target.value)} 
+        value={lastName} 
+      />
+      </label>
+
       <label>Email address:
       <input 
         type="email" 
@@ -27,6 +46,7 @@ const Signup = () => {
       </label>
       <br/>
       <label>Password:
+        <h6>Must be 8 Characters Minimum with at least one Number and Uppercase letter.</h6>
       <input 
         type="password" 
         onChange={(e) => setPassword(e.target.value)} 
