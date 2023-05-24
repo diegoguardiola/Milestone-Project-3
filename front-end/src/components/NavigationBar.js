@@ -3,7 +3,12 @@ import { Link } from 'react-router-dom';
 import { useLogout } from '../hooks/useLogout';
 import { useAuthContext } from '../hooks/useAuthContext';
 
-const Navbar = () => {
+// React-Bootstrap
+import Navbar from 'react-bootstrap/Navbar';
+import Container from 'react-bootstrap/Container'
+import Nav from 'react-bootstrap/Nav'
+
+const Navibar = () => {
   const { logout } = useLogout();
   const { user } = useAuthContext();
 
@@ -12,27 +17,29 @@ const Navbar = () => {
   };
 
   return (
-    <header>
-      <div className="container">
-        <nav>
+    <Navbar bg='light' expand='lg'>
+      <Container>
+        <Navbar.Collapse id='basic-navbar-nav'>
+        <Nav className="me-auto">
           {user && (
-            <div>
-              <span>{user.email}</span>
-              <button onClick={handleClick}>Log out</button>
-              <Link to="/">Home</Link>
-            </div>
+            <>
+              <Navbar.Text>Signed in as <b>{user.email}</b></Navbar.Text>
+              <Link className='nav-link' to='/' onClick={handleClick}>Log out</Link>
+              <Link className='nav-link' to='/'>Home</Link>
+            </>
           )}
           {!user && (
-            <div>
-              <Link to="/">Home</Link>
-              <Link to="/login">Login</Link>
-              <Link to="/signup">Signup</Link>
-            </div>
+            <>
+              <Link className='nav-link' to='/'>Home</Link>
+              <Link className ='nav-link' to="/login">Login</Link>
+              <Link className='nav-link' to='/signup'> Signup</Link>
+            </>
           )}
-        </nav>
-      </div>
-    </header>
+        </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 };
 
-export default Navbar;
+export default Navibar;
