@@ -5,14 +5,6 @@ const validator = require('validator')
 const Schema = mongoose.Schema
 
 const userSchema = new Schema({
-  firstName:{
-    type: String,
-    required: true,
-  },
-  lastName:{
-    type: String,
-    required: true,
-  },
   email: {
     type: String,
     required: true,
@@ -57,7 +49,7 @@ userSchema.statics.signup = async function(email, password) {
 userSchema.statics.login = async function(email, password) {
   //validation
   if (!email || !password) {
-    throw Error('Al;l fields are required')
+    throw Error('All fields are required')
   }
 
   const user = await this.findOne({ email })
