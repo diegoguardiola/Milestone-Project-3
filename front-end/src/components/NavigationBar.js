@@ -23,8 +23,8 @@ const Navibar = () => {
         <Nav className="me-auto">
           {user && (
             <>
-              <span>{user.email}</span>
-              <button onClick={handleClick}>Log out</button>
+              {user.email}
+              <Link className='nav-link' to='/' onClick={handleClick}>Log out</Link>
               <Link className='nav-link' to='/'>Home</Link>
             </>
           )}
