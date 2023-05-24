@@ -22,18 +22,18 @@ const Navibar = () => {
         <Navbar.Collapse id='basic-navbar-nav'>
         <Nav className="me-auto">
           {user && (
-            <div>
+            <>
               <span>{user.email}</span>
               <button onClick={handleClick}>Log out</button>
-              <Nav.Link to="/"><Link to='/'>Home</Link></Nav.Link>
-            </div>
+              <Link className='nav-link' to='/'>Home</Link>
+            </>
           )}
           {!user && (
-            <div>
-              <Nav.Link to="/">Home</Nav.Link>
-              <Nav.Link to="/login">Login</Nav.Link>
-              <Nav.Link to="/signup">Signup</Nav.Link>
-            </div>
+            <>
+              <Link className='nav-link' to='/'>Home</Link>
+              <Link className ='nav-link' to="/login">Login</Link>
+              <Link className='nav-link' to='/signup'> Signup</Link>
+            </>
           )}
         </Nav>
         </Navbar.Collapse>
