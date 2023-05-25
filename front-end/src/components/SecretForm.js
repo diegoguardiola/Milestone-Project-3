@@ -58,7 +58,7 @@ const SecretForm = () => {
         value={url}
       />
 
-      <label>Password</label>
+      <label>Password:</label>
       <input 
         type="text"
         onChange={(e) => setPassword(e.target.value)}
