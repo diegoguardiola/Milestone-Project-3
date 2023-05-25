@@ -2,6 +2,8 @@ import React, { useState } from "react"
 import { useSecretsContext } from "../hooks/useSecretsContext"
 import { useAuthContext } from "../hooks/useAuthContext"
 
+import "../css/secrets.css"
+
 const SecretForm = () => {
   const { dispatch } = useSecretsContext()
   const { user } = useAuthContext()
@@ -63,7 +65,7 @@ const SecretForm = () => {
         value={password}
       />
 
-      <button>Add Secret</button>
+      <button className="addSecret">Add Secret</button>
       {error && <div className="error">{error}</div>}
     </form>
   )

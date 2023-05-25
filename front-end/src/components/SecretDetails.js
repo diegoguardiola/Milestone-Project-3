@@ -4,6 +4,8 @@ import React from 'react'
 import formatDistanceToNow from 'date-fns/formatDistanceToNow'
 import { useAuthContext } from '../hooks/useAuthContext'
 
+import "../css/secrets.css"
+
 const SecretDetails = ({ secret }) => {
   const { dispatch } = useSecretsContext()
   const { user } = useAuthContext()
@@ -34,7 +36,7 @@ const SecretDetails = ({ secret }) => {
       <h4>URL: {secret.url}</h4>
       <h4>Password: {secret.password}</h4>
       <p>{formatDistanceToNow(new Date(secret.createdAt), { addSuffix: true })}</p>
-      <button onClick={handleClick}>Delete</button>
+      <button className='deleteButton' onClick={handleClick}>Delete</button>
     </div>
   )
 }
