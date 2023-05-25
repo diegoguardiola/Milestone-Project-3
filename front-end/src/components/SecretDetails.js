@@ -30,8 +30,8 @@ const SecretDetails = ({ secret }) => {
   }    
 
   return (
-    <div>
-      <h4>{secret.url}</h4>
+    <div className='secrets'>
+      <h4>URL: {secret.url}</h4>
       <h4>{secret.password}</h4>
       <p>{formatDistanceToNow(new Date(secret.createdAt), { addSuffix: true })}</p>
       <button onClick={handleClick}>Delete</button>
