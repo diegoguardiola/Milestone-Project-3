@@ -32,8 +32,8 @@ const Home = () => {
   }, [dispatch, user])
 
   return (
-    <div>
-      <div>
+    <div className='secretsbox'>
+      <div className='secrets'>
         {secrets && secrets.map((secret) => (
           <SecretDetails key={secret._id} secret={secret} />
         ))}

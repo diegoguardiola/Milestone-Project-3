@@ -35,7 +35,13 @@ userSchema.statics.signup = async function(email, password) {
   if (!validator.isEmail(email)) {
     throw Error('Email is invalid')
   }
-  if (!validator.isStrongPassword(password)) {
+  if (!validator.isStrongPassword(password,
+    { 
+      minLength: 8, minLowercase: 0, minUppercase: 1, minNumbers: 1, minSymbols: 0, returnScore: true, pointsPerUnique: 10, pointsPerRepeat: 10, pointsForContainingLower: 10, pointsForContainingUpper: 10, pointsForContainingNumber: 10, pointsForContainingSymbol: 10
+    
+    }
+
+    )) {
     throw Error('Password is not strong enough')
   }
 
@@ -57,7 +63,7 @@ userSchema.statics.signup = async function(email, password) {
 userSchema.statics.login = async function(email, password) {
   //validation
   if (!email || !password) {
-    throw Error('Al;l fields are required')
+    throw Error('All fields are required')
   }
 
   const user = await this.findOne({ email })

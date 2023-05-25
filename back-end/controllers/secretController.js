@@ -42,20 +42,17 @@ const createSecret = async (req, res) => {
 
 //delete a secret
 const deleteSecret = async (req, res) => {
-    const { id } = req.params
-
-    if (!mongoose.Types.ObjectId.isValid(id)) {
-        return res.status(404).json({message: 'No such secret'})
+    try {
+      const _id = req.params.id; // extract _id from request parameters
+      const secret = await Secret.findByIdAndDelete(_id); // now _id is defined
+      if (!secret) {
+        return res.status(404).send();
+      }
+      res.send(secret);
+    } catch (e) {
+      res.status(500).send();
     }
-
-    const secret = await Secret.findByIdAndDelete({id: _id})
-
-    if (!secret) {
-        return res.status(400).json({error: 'No such secret'})
-    }
-
-    res.status(200).json({message: 'Secret deleted successfully', secret})
-}
+  };
 
 // update a workout
 const updateSecret = async (req, res) => {

@@ -12,25 +12,29 @@ const SecretDetails = ({ secret }) => {
     if (!user) {
       return
     }
-    const response = await fetch('http://localhost:5000/m3/secrets/' + secret._id, {
-      method: 'DELETE',
-      headers: {
-        'Authorization': `Bearer ${user.token}`
+    try {
+      const response = await fetch('http://localhost:5000/m3/secrets/' + secret._id, {
+        method: 'DELETE',
+        headers: {
+          'Authorization': `Bearer ${user.token}`
+        }
+      });
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
       }
-    })
-    const json = await response.json()
-
-    if (response.ok) {
-      dispatch({type: 'DELETE_SECRET', payload: json})
+      const json = await response.json();
+      dispatch({type: 'DELETE_SECRET', payload: json});
+    } catch(error) {
+      console.log("There was an error!", error);
     }
-  }
+  }    
 
   return (
     <div>
       <h4>{secret.url}</h4>
       <h4>{secret.password}</h4>
       <p>{formatDistanceToNow(new Date(secret.createdAt), { addSuffix: true })}</p>
-      <span onClick={handleClick}>delete</span>
+      <button onClick={handleClick}>Delete</button>
     </div>
   )
 }
