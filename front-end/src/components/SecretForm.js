@@ -9,6 +9,7 @@ const SecretForm = () => {
   const { user } = useAuthContext()
 
   const [url, setUrl] = useState('')
+  const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState(null)
   const [emptyFields, setEmptyFields] = useState([])
@@ -21,7 +22,7 @@ const SecretForm = () => {
       return
     }
 
-    const secret = {url, password}
+    const secret = {url, username,  password}
 
     const response = await fetch('http://localhost:5000/m3/secrets/', {
       method: 'POST',
@@ -39,6 +40,7 @@ const SecretForm = () => {
     }
     if (response.ok) {
       setUrl('')
+      setUsername('')
       setPassword('')
       setError(null)
       setEmptyFields([])
@@ -56,6 +58,13 @@ const SecretForm = () => {
         type="text"
         onChange={(e) => setUrl(e.target.value)}
         value={url}
+      />
+
+      <label>Username:</label>
+      <input 
+        type="text"
+        onChange={(e) => setUsername(e.target.value)}
+        value={username}
       />
 
       <label>Password:</label>
