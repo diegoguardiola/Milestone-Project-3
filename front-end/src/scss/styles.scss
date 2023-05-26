@@ -1,0 +1,40 @@
+@import "utilities";
+@import "colors";
+
+.main{
+  background-color: $primarybackground;
+}
+  
+.login{
+  border: 1px solid black;
+  width: 60%;
+  text-align: center;
+  background-color: $primarybackground;  
+  @include setcenter;
+  label, input{
+    padding: 10px 10px 10px 0;
+    display: inline-block;
+  }
+  input{
+    background-color: $whitebackground;
+  }
+  .login{
+    @include buttoncorners(3px);
+    background-color: $whitebackground;
+    position: relative;
+    width: 10em;
+    &:hover{
+      background-color: royalblue;
+    }
+  }
+  .signup{
+    background-color: $whitebackground;
+    @include buttoncorners (2px);
+    position: relative;
+    right: 20em;
+    &:hover{
+      background-color: royalblue;
+    }
+  }
+}
+  

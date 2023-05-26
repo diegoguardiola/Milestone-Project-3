@@ -1,0 +1,16 @@
+@mixin setcenter{
+    position: absolute;
+    top:50%;
+    left:50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+@mixin buttoncorners($value){
+    border: none;
+    text-align: center;
+    display: inline-block;
+    font-size: medium;
+    margin: 10px;
+    border-radius: $value;
+}

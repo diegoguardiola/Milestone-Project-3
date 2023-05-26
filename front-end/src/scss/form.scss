@@ -1,0 +1,51 @@
+@import "colors";
+@import "font";
+@import "utilities";
+
+h1, h2 {
+    border-bottom: 1px solid $whitebackground;
+    font-family: $primaryfont;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+    padding: 10px;
+    text-align: center;
+}
+form {
+    background: $whitebackground;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 0 auto;
+    max-width: 500px;
+    padding: 30px 50px;
+}
+label {
+    color: $fontcolor;
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+  input {
+    border: 1px solid $inputborder;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 10px;
+    width: 100%;
+  }
+
+
+
+.submitButton {
+    @include buttoncorners(2px);
+    background-color: $backgroundblue;
+    color: $whitebackground;
+    font-family: $primaryfont;
+    font-size: 14px;
+    margin: 20px 0px;
+  }
+.registerButton{
+    @include buttoncorners(2px);
+
+}
