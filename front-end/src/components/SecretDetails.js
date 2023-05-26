@@ -72,6 +72,7 @@ const SecretDetails = ({ secret }) => {
              <h4>Password: {secret.password}</h4>
              <h4>Username: {secret.username}</h4>
              <p>{formatDistanceToNow(new Date(secret.createdAt), { addSuffix: true })}</p>
+             <button onClick={handleEdit}>Edit</button>
       <button className='deleteButton' onClick={handleClick}>Delete</button>
           </>
         )}
