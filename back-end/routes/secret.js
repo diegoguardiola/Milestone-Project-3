@@ -16,7 +16,7 @@ router.post('/', createSecret)
 router.delete('/:id', deleteSecret)
 
 // UPDATE a workout
-router.patch('/:id', updateSecret)
+router.put('/:id', updateSecret)
 
 
 module.exports = router
