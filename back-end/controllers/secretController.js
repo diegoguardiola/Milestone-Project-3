@@ -12,12 +12,15 @@ const getAllSecrets = async (req, res) => {
 
 //create a secret
 const createSecret = async (req, res) => {
-    const { url, password } = req.body
+    const { url, username, password } = req.body
 
     let emptyFields = []
 
     if (!url) {
         emptyFields.push('url')
+    }
+    if (!username) {
+      emptyFields.push('username')
     }
     if (!password) {
         emptyFields.push('password')
@@ -32,7 +35,7 @@ const createSecret = async (req, res) => {
     try {
         const user_id = req.user._id
         const secret = await Secret.create({
-            url, password, user_id
+            url, username, password, user_id
         })
         res.status(200).json(secret)
     } catch (error) {

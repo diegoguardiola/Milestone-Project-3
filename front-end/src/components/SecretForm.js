@@ -2,11 +2,14 @@ import React, { useState } from "react"
 import { useSecretsContext } from "../hooks/useSecretsContext"
 import { useAuthContext } from "../hooks/useAuthContext"
 
+import "../css/secrets.css"
+
 const SecretForm = () => {
   const { dispatch } = useSecretsContext()
   const { user } = useAuthContext()
 
   const [url, setUrl] = useState('')
+  const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState(null)
   const [emptyFields, setEmptyFields] = useState([])
@@ -19,7 +22,7 @@ const SecretForm = () => {
       return
     }
 
-    const secret = {url, password}
+    const secret = {url, username,  password}
 
     const response = await fetch('http://localhost:5000/m3/secrets/', {
       method: 'POST',
@@ -37,6 +40,7 @@ const SecretForm = () => {
     }
     if (response.ok) {
       setUrl('')
+      setUsername('')
       setPassword('')
       setError(null)
       setEmptyFields([])
@@ -56,14 +60,21 @@ const SecretForm = () => {
         value={url}
       />
 
-      <label>Password</label>
+      <label>Username:</label>
+      <input 
+        type="text"
+        onChange={(e) => setUsername(e.target.value)}
+        value={username}
+      />
+
+      <label>Password:</label>
       <input 
         type="text"
         onChange={(e) => setPassword(e.target.value)}
         value={password}
       />
 
-      <button>Add Secret</button>
+      <button className="addSecret">Add Secret</button>
       {error && <div className="error">{error}</div>}
     </form>
   )

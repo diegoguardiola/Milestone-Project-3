@@ -6,6 +6,8 @@ import { useAuthContext } from '../hooks/useAuthContext'
 import SecretUpdate from './SecretUpdate'
 
 
+import "../css/secrets.css"
+
 const SecretDetails = ({ secret }) => {
   const { dispatch } = useSecretsContext()
   const { user } = useAuthContext()
@@ -61,21 +63,22 @@ const SecretDetails = ({ secret }) => {
   };
 
     return (
-      <div>
+      <div className='secrets'>
         {isUpdating ? (
           <SecretUpdate secret={secret} onUpdate={handleUpdate} onCancel={() => setIsUpdating(false)} />
         ) : (
           <>
-            <h4>{secret.url}</h4>
-            <h4>{secret.password}</h4>
-            <p>{formatDistanceToNow(new Date(secret.createdAt), { addSuffix: true })}</p>
-            <button onClick={handleEdit}>Edit</button>
-            <button onClick={handleClick}>Delete</button>
+             <h4>URL: {secret.url}</h4>
+             <h4>Password: {secret.password}</h4>
+             <h4>Username: {secret.username}</h4>
+             <p>{formatDistanceToNow(new Date(secret.createdAt), { addSuffix: true })}</p>
+      <button className='deleteButton' onClick={handleClick}>Delete</button>
           </>
         )}
       </div>
     );
     
+
 }
 
 export default SecretDetails
