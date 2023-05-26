@@ -57,15 +57,17 @@ const deleteSecret = async (req, res) => {
     }
   };
 
-// update a workout
+// update a secret
 const updateSecret = async (req, res) => {
     const { id } = req.params
+    console.log(id)
+    console.log('!!!')
   
     if (!mongoose.Types.ObjectId.isValid(id)) {
       return res.status(404).json({error: 'No such workout'})
     }
   
-    const secret = await secret.findOneAndUpdate({_id: id}, {
+    const secret = await Secret.findOneAndUpdate({_id: id}, {
       ...req.body
     })
   
